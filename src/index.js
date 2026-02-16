@@ -1,10 +1,12 @@
+import AgentAPI from "apminsight";
+AgentAPI.config();
+
 import express from "express";
 import http from "http";
 import { matchRouter } from "./routes/matches.js";
 import { commentaryRouter } from "./routes/commentary.js";
 import { attachWebSocketServer } from "./ws/server.js";
 import { securityMiddleware } from "./arcjet.js";
-import { commentary } from "./db/schema.js";
 
 const PORT = Number(process.env.PORT || 8000);
 const HOST = process.env.HOST || "0.0.0.0";
